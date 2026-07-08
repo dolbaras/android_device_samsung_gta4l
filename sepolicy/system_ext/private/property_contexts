@@ -1,0 +1,4 @@
+# Бэкпорт 18.1: строка ro.bootanim.set_orientation_* убрана. Это Android 12+ механизм
+# (тип surfaceflinger_prop отсутствует в A11, а синтаксис "exact enum" типизированных
+# property_contexts введён в A12). В A11 bootanimation-ориентация так не задаётся.
+# Default orienation for boot animation — см. b/246793311 (A12+).
