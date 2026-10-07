@@ -1,15 +1,15 @@
-# PixelExperience Plus product для gta4l (SM-T505, LTE-планшет).
-# Наследует HARDWARE-конфиг устройства (device.mk, ROM-агностичен) + PE-конфиг + GApps.
+# PixelExperience Plus product for gta4l (SM-T505, LTE).
+# Device hardware configuration (device.mk, shared with LineageOS) + PE configuration + GApps.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Hardware (то же, что и для LineageOS — все наши A11-фиксы)
+# Hardware (the same as for LineageOS)
 $(call inherit-product, device/samsung/gta4l/device.mk)
 
-# PixelExperience: LTE-планшету нужна телефония → common_full_phone (не tablet_wifionly)
+# PixelExperience: the LTE tablet needs telephony, so common_full_phone (not tablet_wifionly)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-# GApps (вшиты в PE)
+# GApps (part of PE)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 800

@@ -2,9 +2,9 @@
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
-        <!-- Бэкпорт 18.1: @1.5→@1.4. Samsung rild (libsec-ril/libril блоб) регистрирует IRadio
-             максимум @1.4; при объявлении @1.5 com.android.phone виснет в getService(@1.5) навсегда
-             (phoneId=-1, нет IMEI/сети). @1.4 = то, что HAL реально предоставляет. -->
+        <!-- @1.4, not @1.5: the Samsung rild (libsec-ril, libril) registers IRadio up to @1.4.
+             With @1.5 declared, com.android.phone waits forever in getService(@1.5)
+             (phoneId -1, no IMEI, no network). -->
         <fqname>@1.4::IRadio/slot1</fqname>
         <fqname>@1.2::ISap/slot1</fqname>
     </hal>

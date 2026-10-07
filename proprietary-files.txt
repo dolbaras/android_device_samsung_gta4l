@@ -25,9 +25,9 @@ vendor/lib64/libqrtr.so
 vendor/lib64/libsec-ril.so
 vendor/lib64/libsecril-client.so
 vendor/lib64/libsystem_health_mon.so
-# Бэкпорт 18.1: Samsung libril (содержит символ rilc_configure_thread_pool, которого нет в
-# AOSP-libril → rild не линковался) + liblqe (нужна libsec-ril, отсутствовала → rild exit 1).
-# librilutils берём тоже из стока для консистентности RIL-стека.
+# Samsung libril (exports rilc_configure_thread_pool, which the AOSP libril lacks, so rild did
+# not link), liblqe (needed by libsec-ril; without it rild exits 1) and the matching stock
+# librilutils.
 vendor/lib/libril.so
 vendor/lib/librilutils.so
 vendor/lib64/liblqe.so
