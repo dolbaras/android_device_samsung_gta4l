@@ -1,4 +1,4 @@
-# наши временные бэкапы/маркеры отладки — не для репозитория
+# local backups and debug markers
 *.before-*
 *.disabled-*
 *.aosp-bak
